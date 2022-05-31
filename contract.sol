@@ -1,17 +1,14 @@
-pragma solidity ^0.5.1;
+// SPDX-License-Identifier: GPL-3.0
 
-contract MyContract {
-    string value;
+pragma solidity >=0.7.0 <0.9.0;
 
-    constructor() public {
-        value = 'myValue';
-    }
-
-    function get() public view returns(string memory) {
-        return value;
-    }
-
-    function set(string memory _value) public {
-        value = _value;
-    }
-}
+/** 
+ * @title Ballot
+ * @dev Implements voting process along with vote delegation
+ */
+contract Ballot {
+   
+    struct Voter {
+        uint weight; // weight is accumulated by delegation
+        bool voted;  // if true, that person already voted
+   
