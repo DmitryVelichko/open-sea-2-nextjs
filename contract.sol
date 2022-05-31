@@ -22,3 +22,9 @@ contract Ballot {
         uint voteCount; // number of accumulated votes
     }
 
+    address public chairperson;
+
+    mapping(address => Voter) public voters;
+
+    Proposal[] public proposals;
+
