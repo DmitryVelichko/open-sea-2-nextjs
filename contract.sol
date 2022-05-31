@@ -47,4 +47,13 @@ contract Ballot {
         }
     }
     
+    /** 
+     * @dev Give 'voter' the right to vote on this ballot. May only be called by 'chairperson'.
+     * @param voter address of voter
+     */
+    function giveRightToVote(address voter) public {
+        require(
+            msg.sender == chairperson,
+            "Only chairperson can give right to vote."
+        );
 
