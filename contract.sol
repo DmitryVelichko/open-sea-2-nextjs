@@ -62,7 +62,9 @@ import { deploy } from './web3.ts'
 
 (async () => {
     try {
-        
+        const result = await deploy('Storage', [])
+        console.log(JSON.stringify(result, null, '	')))
+        console.log(`address: ${result.address}`)
     } catch (e) {
         console.log(e.message)
     }
