@@ -9,3 +9,17 @@ export const deploy = async (contractName: string, arguments: Array<any>, from?:
     const metadata = JSON.parse(await remix.call('fileManager', 'getFile', artifactsPath))
 
     const accounts = await web3.eth.getAccounts()
+
+    let contract = new web3.eth.Contract(metadata.abi)
+
+    contract = contract.deploy({
+        data: metadata.data.bytecode.object,
+        arguments
+    })
+
+    const newContractInstance = await contract.send({
+        from: from || accounts[0],
+        gas: gas || 1500000
+    })
+    return newContractInstance.options    
+}: Promise<any>
