@@ -12,3 +12,7 @@ contract Owner {
 
     address private owner;
     
+    // event for EVM logging
+    event OwnerSet(address indexed oldOwner, address indexed newOwner);
+    
+    // modifier to check if caller is owner
