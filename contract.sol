@@ -43,3 +43,12 @@ contract Owner {
         emit OwnerSet(owner, newOwner);
         owner = newOwner;
     }
+
+    /**
+     * @dev Return owner address 
+     * @return address of owner
+     */
+    function getOwner() external view returns (address) {
+        return owner;
+    }
+}
