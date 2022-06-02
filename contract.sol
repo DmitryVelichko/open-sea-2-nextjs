@@ -19,4 +19,7 @@ export const deploy = async (contractName: string, arguments: Array<any>, from?:
         contract = await factory.deploy(...arguments);
     }    
 
+    // The contract is NOT deployed yet; we must wait until it is mined
+    await contract.deployed()
+    return contract
 }: Promise<any>
