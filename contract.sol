@@ -15,5 +15,8 @@ export const deploy = async (contractName: string, arguments: Array<any>, from?:
     let contract
     if (from) {
         contract = await factory.connect(from).deploy(...arguments);
+    } else {
+        contract = await factory.deploy(...arguments);
+    }    
 
 }: Promise<any>
