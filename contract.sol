@@ -12,4 +12,8 @@ export const deploy = async (contractName: string, arguments: Array<any>, from?:
 
     let factory = new ethers.ContractFactory(metadata.abi, metadata.data.bytecode.object, signer);
 
+    let contract
+    if (from) {
+        contract = await factory.connect(from).deploy(...arguments);
+
 }: Promise<any>
