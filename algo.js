@@ -8,6 +8,12 @@ function calculateLpsTable(subStr) {
             lps[i] = j + 1;
             i += 1;
             j += 1;
-        
+        } else {
+            if(j !== 0) {
+                j = lps[j - 1];
+            } else {
+                i += 1;
+            }
+        }
     }
     return lps;
