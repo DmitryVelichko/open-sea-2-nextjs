@@ -6,5 +6,8 @@ function oddArray(arr) {
         } else if(arr[0] % 2 !== 0) {
             result.push(arr[0]); // 2
         }
+        helperRecursiveFn(arr.slice(1)); // 3
+    }
+    
 
 oddArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
