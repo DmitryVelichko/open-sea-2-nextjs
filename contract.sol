@@ -16,6 +16,8 @@ contract SimpleStorage {
     // uint256[] public anArray;
     People[] public people;
 
-   
+    mapping(string => uint256) public nameToFavoriteNumber;
+
+    
     }
 }
