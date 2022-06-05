@@ -13,6 +13,9 @@ contract SimpleStorage {
         uint256 favoriteNumber;
         string name;
     }
-    
+    // uint256[] public anArray;
+    People[] public people;
+
+   
     }
 }
