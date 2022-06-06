@@ -24,3 +24,11 @@ contract ReceiverPays {
         require(msg.sender == owner);
         selfdestruct(payable(msg.sender));
     }
+
+    /// signature methods.
+    function splitSignature(bytes memory sig)
+        internal
+        pure
+        returns (uint8 v, bytes32 r, bytes32 s)
+    {
+        require(sig.length == 65);
