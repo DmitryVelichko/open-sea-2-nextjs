@@ -13,3 +13,9 @@ contract ReceiverPays {
 
         // this recreates the message that was signed on the client
         bytes32 message = prefixed(keccak256(abi.encodePacked(msg.sender, amount, nonce, this)));
+
+        require(recoverSigner(message, signature) == owner);
+
+        payable(msg.sender).transfer(amount);
+    }
+
