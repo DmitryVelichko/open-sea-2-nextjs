@@ -49,4 +49,14 @@ contract ReceiverPays {
         internal
         pure
         returns (address)
-    
+    {
+        (uint8 v, bytes32 r, bytes32 s) = splitSignature(sig);
+
+        return ecrecover(message, v, r, s);
+    }
+
+    /// builds a prefixed hash to mimic the behavior of eth_sign.
+    function prefixed(bytes32 hash) internal pure returns (bytes32) {
+        return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash));
+    }
+}
