@@ -10,3 +10,6 @@ contract ReceiverPays {
     function claimPayment(uint256 amount, uint256 nonce, bytes memory signature) external {
         require(!usedNonces[nonce]);
         usedNonces[nonce] = true;
+
+        // this recreates the message that was signed on the client
+        bytes32 message = prefixed(keccak256(abi.encodePacked(msg.sender, amount, nonce, this)));
