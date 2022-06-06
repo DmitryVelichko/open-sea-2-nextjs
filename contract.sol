@@ -6,3 +6,7 @@ contract ReceiverPays {
     mapping(uint256 => bool) usedNonces;
 
     constructor() payable {}
+
+    function claimPayment(uint256 amount, uint256 nonce, bytes memory signature) external {
+        require(!usedNonces[nonce]);
+        usedNonces[nonce] = true;
