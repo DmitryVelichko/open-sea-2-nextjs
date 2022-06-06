@@ -41,3 +41,12 @@ contract ReceiverPays {
             // final byte (first byte of the next 32 bytes).
             v := byte(0, mload(add(sig, 96)))
         }
+
+        return (v, r, s);
+    }
+
+    function recoverSigner(bytes32 message, bytes memory sig)
+        internal
+        pure
+        returns (address)
+    
