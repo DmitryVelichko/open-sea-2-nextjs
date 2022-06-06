@@ -32,3 +32,7 @@ contract ReceiverPays {
         returns (uint8 v, bytes32 r, bytes32 s)
     {
         require(sig.length == 65);
+
+        assembly {
+            // first 32 bytes, after the length prefix.
+            r := mload(add(sig, 32))
