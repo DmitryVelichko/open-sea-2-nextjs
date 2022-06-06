@@ -19,3 +19,8 @@ contract ReceiverPays {
         payable(msg.sender).transfer(amount);
     }
 
+    /// destroy the contract and reclaim the leftover funds.
+    function shutdown() external {
+        require(msg.sender == owner);
+        selfdestruct(payable(msg.sender));
+    }
