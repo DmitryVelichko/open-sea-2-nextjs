@@ -6,3 +6,10 @@ import LinkedList from '../linked-list/LinkedList';
 // are being handled.
 const defaultHashTableSize = 32;
 
+export default class HashTable {
+  /**
+   * @param {number} hashTableSize
+   */
+  constructor(hashTableSize = defaultHashTableSize) {
+    // Create hash table of certain size and fill each bucket with empty linked list.
+    this.buckets = Array(hashTableSize).fill(null).map(() => new LinkedList());
