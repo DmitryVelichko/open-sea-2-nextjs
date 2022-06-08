@@ -89,3 +89,16 @@ export default class BloomFilter {
    */
   hash2(item) {
     let hash = 5381;
+
+    for (let charIndex = 0; charIndex < item.length; charIndex += 1) {
+      const char = item.charCodeAt(charIndex);
+      hash = (hash << 5) + hash + char; /* hash * 33 + c */
+    }
+
+    return Math.abs(hash % this.size);
+  }
+
+  /**
+   * @param {string} item
+   * @return {number}
+   */
