@@ -14,3 +14,12 @@ export default class BloomFilter {
    */
   insert(item) {
     const hashValues = this.getHashValues(item);
+
+    // Set each hashValue index to true.
+    hashValues.forEach((val) => this.storage.setValue(val));
+  }
+
+  /**
+   * @param {string} item
+   * @return {boolean}
+   */
