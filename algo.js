@@ -80,3 +80,17 @@ export default class BinaryTreeNode {
       // Right one is an uncle.
       return this.parent.parent.right;
     }
+
+    // Left one is an uncle.
+    return this.parent.parent.left;
+  }
+
+  /**
+   * @param {*} value
+   * @return {BinaryTreeNode}
+   */
+  setValue(value) {
+    this.value = value;
+
+    return this;
+  }
