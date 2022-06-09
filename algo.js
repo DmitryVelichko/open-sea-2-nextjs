@@ -94,3 +94,24 @@ export default class BinaryTreeNode {
 
     return this;
   }
+
+  /**
+   * @param {BinaryTreeNode} node
+   * @return {BinaryTreeNode}
+   */
+  setLeft(node) {
+    // Reset parent for left node since it is going to be detached.
+    if (this.left) {
+      this.left.parent = null;
+    }
+
+    // Attach new node to the left.
+    this.left = node;
+
+    // Make current node to be a parent for new left one.
+    if (this.left) {
+      this.left.parent = this;
+    }
+
+    return this;
+  }
