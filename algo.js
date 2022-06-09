@@ -11,3 +11,17 @@ export default class BinaryTreeNode {
     this.parent = null;
     this.value = value;
 
+    // Any node related meta information may be stored here.
+    this.meta = new HashTable();
+
+    // This comparator is used to compare binary tree nodes with each other.
+    this.nodeComparator = new Comparator();
+  }
+
+  /**
+   * @return {number}
+   */
+  get leftHeight() {
+    if (!this.left) {
+      return 0;
+    }
