@@ -154,3 +154,66 @@ export default class BinaryTreeNode {
 
     return false;
   }
+
+  /**
+   * @param {BinaryTreeNode} nodeToReplace
+   * @param {BinaryTreeNode} replacementNode
+   * @return {boolean}
+   */
+  replaceChild(nodeToReplace, replacementNode) {
+    if (!nodeToReplace || !replacementNode) {
+      return false;
+    }
+
+    if (this.left && this.nodeComparator.equal(this.left, nodeToReplace)) {
+      this.left = replacementNode;
+      return true;
+    }
+
+    if (this.right && this.nodeComparator.equal(this.right, nodeToReplace)) {
+      this.right = replacementNode;
+      return true;
+    }
+
+    return false;
+  }
+
+  /**
+   * @param {BinaryTreeNode} sourceNode
+   * @param {BinaryTreeNode} targetNode
+   */
+  static copyNode(sourceNode, targetNode) {
+    targetNode.setValue(sourceNode.value);
+    targetNode.setLeft(sourceNode.left);
+    targetNode.setRight(sourceNode.right);
+  }
+
+  /**
+   * @return {*[]}
+   */
+  traverseInOrder() {
+    let traverse = [];
+
+    // Add left node.
+    if (this.left) {
+      traverse = traverse.concat(this.left.traverseInOrder());
+    }
+
+    // Add root.
+    traverse.push(this.value);
+
+    // Add right node.
+    if (this.right) {
+      traverse = traverse.concat(this.right.traverseInOrder());
+    }
+
+    return traverse;
+  }
+
+  /**
+   * @return {string}
+   */
+  toString() {
+    return this.traverseInOrder().toString();
+  }
+}
