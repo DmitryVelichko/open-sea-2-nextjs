@@ -25,3 +25,14 @@ export default class BinaryTreeNode {
     if (!this.left) {
       return 0;
     }
+
+    return this.left.height + 1;
+  }
+
+  /**
+   * @return {number}
+   */
+  get rightHeight() {
+    if (!this.right) {
+      return 0;
+    }
