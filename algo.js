@@ -47,3 +47,19 @@ export default class BinaryTreeNode {
     return Math.max(this.leftHeight, this.rightHeight);
   }
 
+  /**
+   * @return {number}
+   */
+  get balanceFactor() {
+    return this.leftHeight - this.rightHeight;
+  }
+
+  /**
+   * Get parent's sibling if it exists.
+   * @return {BinaryTreeNode}
+   */
+  get uncle() {
+    // Check if current node has parent.
+    if (!this.parent) {
+      return undefined;
+    }
