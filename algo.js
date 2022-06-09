@@ -63,3 +63,13 @@ export default class BinaryTreeNode {
     if (!this.parent) {
       return undefined;
     }
+
+    // Check if current node has grand-parent.
+    if (!this.parent.parent) {
+      return undefined;
+    }
+
+    // Check if grand-parent has two children.
+    if (!this.parent.parent.left || !this.parent.parent.right) {
+      return undefined;
+    }
