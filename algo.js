@@ -73,3 +73,10 @@ export default class BinaryTreeNode {
     if (!this.parent.parent.left || !this.parent.parent.right) {
       return undefined;
     }
+
+    // So for now we know that current node has grand-parent and this
+    // grand-parent has two children. Let's find out who is the uncle.
+    if (this.nodeComparator.equal(this.parent, this.parent.parent.left)) {
+      // Right one is an uncle.
+      return this.parent.parent.right;
+    }
