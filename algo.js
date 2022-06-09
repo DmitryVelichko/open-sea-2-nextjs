@@ -36,3 +36,14 @@ export default class BinaryTreeNode {
     if (!this.right) {
       return 0;
     }
+
+    return this.right.height + 1;
+  }
+
+  /**
+   * @return {number}
+   */
+  get height() {
+    return Math.max(this.leftHeight, this.rightHeight);
+  }
+
