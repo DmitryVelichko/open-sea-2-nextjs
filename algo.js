@@ -22,7 +22,9 @@ function binarySearch(array, item) {
   let position = -1;
   while (found === false && start <= end) {
     middle = Math.floor((start + end) / 2);
-
+    if (array[middle] === item) {
+      found = true;
+      
 }
 
 console.log(binarySearch(array, 2));
