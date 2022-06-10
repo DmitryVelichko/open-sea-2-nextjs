@@ -28,6 +28,8 @@ function binarySearch(array, item) {
       return position;
     }
     if (item < array[middle]) {
-      
+      end = middle - 1;
+    } else {
+     
 
 console.log(binarySearch(array, 2));
