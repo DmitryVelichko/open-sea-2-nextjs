@@ -7,4 +7,7 @@ function linearSearch(array, item) {
       return i;
     }
   }
-  
+  return null;
+}
+
+console.log(linearSearch(array, 1)); // Вызываем функцию
