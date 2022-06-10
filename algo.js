@@ -11,3 +11,4 @@ function linearSearch(array, item) {
 }
 
 console.log(linearSearch(array, 1)); // Вызываем функцию
+
