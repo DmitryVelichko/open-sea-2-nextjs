@@ -19,5 +19,10 @@ function binarySearch(array, item) {
   let end = array.length;
   let middle;
   let found = false;
- 
+  let position = -1;
+  while (found === false && start <= end) {
+    middle = Math.floor((start + end) / 2);
+
+}
+
 console.log(binarySearch(array, 2));
