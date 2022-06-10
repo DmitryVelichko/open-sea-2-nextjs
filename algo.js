@@ -24,7 +24,9 @@ function binarySearch(array, item) {
     middle = Math.floor((start + end) / 2);
     if (array[middle] === item) {
       found = true;
-      
-}
+      position = middle;
+      return position;
+    }
+  
 
 console.log(binarySearch(array, 2));
