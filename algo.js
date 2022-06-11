@@ -51,3 +51,12 @@ export default class PriorityQueue extends MinHeap {
     this.add(item, priority);
     return this;
   }
+
+  /**
+   * Find item by ite value.
+   * @param {*} item
+   * @return {Number[]}
+   */
+  findByValue(item) {
+    return this.find(item, new Comparator(this.compareValue));
+  }
