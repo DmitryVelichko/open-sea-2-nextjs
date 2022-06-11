@@ -39,3 +39,15 @@ export default class PriorityQueue extends MinHeap {
     this.priorities.delete(item);
     return this;
   }
+
+  /**
+   * Change priority of the item in a queue.
+   * @param {*} item - item we're going to re-prioritize.
+   * @param {number} priority - new item's priority.
+   * @return {PriorityQueue}
+   */
+  changePriority(item, priority) {
+    this.remove(item, new Comparator(this.compareValue));
+    this.add(item, priority);
+    return this;
+  }
