@@ -7,3 +7,11 @@ export default class PriorityQueue extends MinHeap {
   constructor() {
     // Call MinHip constructor first.
     super();
+
+    // Setup priorities map.
+    this.priorities = new Map();
+
+    // Use custom comparator for heap elements that will take element priority
+    // instead of element value into account.
+    this.compare = new Comparator(this.comparePriority.bind(this));
+  }
