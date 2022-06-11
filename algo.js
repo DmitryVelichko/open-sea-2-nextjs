@@ -60,3 +60,12 @@ export default class PriorityQueue extends MinHeap {
   findByValue(item) {
     return this.find(item, new Comparator(this.compareValue));
   }
+
+  /**
+   * Check if item already exists in a queue.
+   * @param {*} item
+   * @return {boolean}
+   */
+  hasValue(item) {
+    return this.findByValue(item).length > 0;
+  }
