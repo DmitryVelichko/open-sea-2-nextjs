@@ -28,4 +28,14 @@ export default class PriorityQueue extends MinHeap {
     return this;
   }
 
- 
+  /**
+   * Remove item from priority queue.
+   * @param {*} item - item we're going to remove.
+   * @param {Comparator} [customFindingComparator] - custom function for finding the item to remove
+   * @return {PriorityQueue}
+   */
+  remove(item, customFindingComparator) {
+    super.remove(item, customFindingComparator);
+    this.priorities.delete(item);
+    return this;
+  }
