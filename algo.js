@@ -69,3 +69,10 @@ export default class PriorityQueue extends MinHeap {
   hasValue(item) {
     return this.findByValue(item).length > 0;
   }
+
+  /**
+   * Compares priorities of two items.
+   * @param {*} a
+   * @param {*} b
+   * @return {number}
+   */
