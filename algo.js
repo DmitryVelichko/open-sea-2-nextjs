@@ -22,4 +22,10 @@ export default class PriorityQueue extends MinHeap {
    * @param {number} [priority] - items priority.
    * @return {PriorityQueue}
    */
+  add(item, priority = 0) {
+    this.priorities.set(item, priority);
+    super.add(item);
+    return this;
+  }
+
  
