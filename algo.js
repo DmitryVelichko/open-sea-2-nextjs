@@ -40,3 +40,9 @@ export default function dijkstra(graph, startVertex) {
     // Iterate over every unvisited neighbor of the current vertex.
     currentVertex.getNeighbors().forEach((neighbor) => {
       // Don't visit already visited vertices.
+      if (!visitedVertices[neighbor.getKey()]) {
+        // Update distances to every neighbor from current vertex.
+        const edge = graph.findEdge(currentVertex, neighbor);
+
+        const existingDistanceToNeighbor = distances[neighbor.getKey()];
+        const distanceToNeighborFromCurrent = distances[currentVertex.getKey()] + edge.weight;
