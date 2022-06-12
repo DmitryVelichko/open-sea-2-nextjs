@@ -16,3 +16,5 @@ export default function dijkstra(graph, startVertex) {
   // Init helper variables that we will need for Dijkstra algorithm.
   const distances = {};
   const visitedVertices = {};
+  const previousVertices = {};
+  const queue = new PriorityQueue();
