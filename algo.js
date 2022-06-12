@@ -36,3 +36,7 @@ export default function dijkstra(graph, startVertex) {
   while (!queue.isEmpty()) {
     // Fetch next closest vertex.
     const currentVertex = queue.poll();
+
+    // Iterate over every unvisited neighbor of the current vertex.
+    currentVertex.getNeighbors().forEach((neighbor) => {
+      // Don't visit already visited vertices.
