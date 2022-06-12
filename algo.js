@@ -55,3 +55,26 @@ export default function dijkstra(graph, startVertex) {
           if (queue.hasValue(neighbor)) {
             queue.changePriority(neighbor, distances[neighbor.getKey()]);
           }
+
+          // Remember previous closest vertex.
+          previousVertices[neighbor.getKey()] = currentVertex;
+        }
+
+        // Add neighbor to the queue for further visiting.
+        if (!queue.hasValue(neighbor)) {
+          queue.add(neighbor, distances[neighbor.getKey()]);
+        }
+      }
+    });
+
+    // Add current vertex to visited ones to avoid visiting it again later.
+    visitedVertices[currentVertex.getKey()] = currentVertex;
+  }
+
+  // Return the set of shortest distances to all vertices and the set of
+  // shortest paths to all vertices in a graph.
+  return {
+    distances,
+    previousVertices,
+  };
+}
