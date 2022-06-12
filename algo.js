@@ -31,3 +31,8 @@ export default function dijkstra(graph, startVertex) {
 
   // Init vertices queue.
   queue.add(startVertex, distances[startVertex.getKey()]);
+
+  // Iterate over the priority queue of vertices until it is empty.
+  while (!queue.isEmpty()) {
+    // Fetch next closest vertex.
+    const currentVertex = queue.poll();
