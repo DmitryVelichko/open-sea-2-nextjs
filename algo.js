@@ -28,3 +28,6 @@ export default function dijkstra(graph, startVertex) {
 
   // We are already at the startVertex so the distance to it is zero.
   distances[startVertex.getKey()] = 0;
+
+  // Init vertices queue.
+  queue.add(startVertex, distances[startVertex.getKey()]);
