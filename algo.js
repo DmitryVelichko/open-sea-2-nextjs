@@ -46,3 +46,12 @@ export default function dijkstra(graph, startVertex) {
 
         const existingDistanceToNeighbor = distances[neighbor.getKey()];
         const distanceToNeighborFromCurrent = distances[currentVertex.getKey()] + edge.weight;
+
+        // If we've found shorter path to the neighbor - update it.
+        if (distanceToNeighborFromCurrent < existingDistanceToNeighbor) {
+          distances[neighbor.getKey()] = distanceToNeighborFromCurrent;
+
+          // Change priority of the neighbor in a queue since it might have became closer.
+          if (queue.hasValue(neighbor)) {
+            queue.changePriority(neighbor, distances[neighbor.getKey()]);
+          }
