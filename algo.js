@@ -25,3 +25,6 @@ export default function dijkstra(graph, startVertex) {
     distances[vertex.getKey()] = Infinity;
     previousVertices[vertex.getKey()] = null;
   });
+
+  // We are already at the startVertex so the distance to it is zero.
+  distances[startVertex.getKey()] = 0;
