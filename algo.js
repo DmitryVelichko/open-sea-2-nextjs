@@ -18,3 +18,10 @@ export default function dijkstra(graph, startVertex) {
   const visitedVertices = {};
   const previousVertices = {};
   const queue = new PriorityQueue();
+
+  // Init all distances with infinity assuming that currently we can't reach
+  // any of the vertices except the start one.
+  graph.getAllVertices().forEach((vertex) => {
+    distances[vertex.getKey()] = Infinity;
+    previousVertices[vertex.getKey()] = null;
+  });
