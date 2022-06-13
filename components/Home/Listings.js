@@ -5,7 +5,7 @@ import { useMarketplace } from '@thirdweb-dev/react';
 import NFTCard from './NFTCard';
 
 const style = {
-    wrapper: `mx-auto`
+    wrapper: `mx-auto grid max-w-fit flex-i grid-cols-i gap-8 p-10 pt-24 md:grid-cols-2`
 };
 
 const Listings = () => {
