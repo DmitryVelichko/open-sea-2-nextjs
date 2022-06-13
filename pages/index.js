@@ -1,7 +1,7 @@
 import {useAddress, useMetamask} from '@thirdweb-dev/react'
 
 const style = {
-
+  wrapper: `flex h-screen items-center justify-center`,
 }
 
 export default function Home() {
