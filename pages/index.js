@@ -1,5 +1,5 @@
 import { useAddress, useMetamask } from '@thirdweb-dev/react';
-import Main from '../components/Home'
+import Main from '../components/Home';
 
 const style = {
   wrapper: `flex h-screen items-center justify-center`,

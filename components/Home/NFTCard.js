@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const NFTCard = () => {
-  return (
-    <div>NFT CARD COMPONENT</div>
-  )
-}
+  return <div>NFT CARD COMPONENT</div>;
+};
 
-export default NFTCard
+export default NFTCard;
