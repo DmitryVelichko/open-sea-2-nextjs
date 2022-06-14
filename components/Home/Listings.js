@@ -37,7 +37,7 @@ const Listings = () => {
               key={index}
             >
               <a>
-                <NFTCard />
+                <NFTCard listing={listing}/>
               </a>
             </Link>
           ))}
