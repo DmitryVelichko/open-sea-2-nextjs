@@ -8,7 +8,10 @@ const NFTCard = ({ listing }) => {
   return (
     <div className={style.wrapper}>
       <div className={style.imageContainer}>
-        
+        <Image 
+        className={style.nftImage}
+        src={listing.asset.image}
+        />
       </div>
     </div>
   );
