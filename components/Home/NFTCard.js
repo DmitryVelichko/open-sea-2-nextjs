@@ -13,6 +13,7 @@ const NFTCard = ({ listing }) => {
         src={listing.asset.image}
         height={340}
         width={340}
+        alt='nft monkey'
         />
       </div>
     </div>
