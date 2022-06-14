@@ -17,7 +17,15 @@ const NFTCard = ({ listing }) => {
         />
       </div>
       <div className={style.nftLowerContainer}>
-        <div className={style.nftInfoContainer}></div>
+        <div className={style.nftInfoContainer}>
+          <div>
+            {listing.asset.collection && (
+              <div className={style.collectionTitle}>
+                {listing.asset?.collection?.name}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
