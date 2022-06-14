@@ -1,8 +1,17 @@
 import React from 'react';
-import {AiOutlineHeart} from 'react-icons/ai'
+import { AiOutlineHeart } from 'react-icons/ai';
+import Image from 'next/image';
 
-const NFTCard = ({listing}) => {
-  return <div>{listing.asset.name}</div>;
+const style = {};
+
+const NFTCard = ({ listing }) => {
+  return (
+    <div className={style.wrapper}>
+      <div className={style.imageContainer}>
+        
+      </div>
+    </div>
+  );
 };
 
 export default NFTCard;
