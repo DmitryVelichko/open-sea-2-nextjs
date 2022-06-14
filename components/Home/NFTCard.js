@@ -16,6 +16,9 @@ const NFTCard = ({ listing }) => {
         alt='nft monkey'
         />
       </div>
+      <div className={style.nftLowerContainer}>
+        <div className={style.nftInfoContainer}></div>
+      </div>
     </div>
   );
 };
