@@ -37,3 +37,8 @@ export default class Trie {
 
       const character = word[charIndex];
       const nextNode = currentNode.getChild(character);
+
+      if (nextNode == null) {
+        // Return if we're trying to delete a word that has not been added to the Trie.
+        return;
+      }
