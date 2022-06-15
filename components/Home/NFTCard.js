@@ -24,6 +24,10 @@ const NFTCard = ({ listing }) => {
                 {listing.asset?.collection?.name}
               </div>
             )}
+
+            <div className={style.nftTitle}>
+              {listing.asset.name}
+            </div>
           </div>
         </div>
       </div>
