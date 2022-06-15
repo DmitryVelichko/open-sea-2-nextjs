@@ -28,3 +28,9 @@ export default class Trie {
    * @param {string} word
    * @return {Trie}
    */
+  deleteWord(word) {
+    const depthFirstDelete = (currentNode, charIndex = 0) => {
+      if (charIndex >= word.length) {
+        // Return if we're trying to delete the character that is out of word's scope.
+        return;
+      }
