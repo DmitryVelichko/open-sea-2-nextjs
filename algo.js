@@ -42,3 +42,6 @@ export default class Trie {
         // Return if we're trying to delete a word that has not been added to the Trie.
         return;
       }
+
+      // Go deeper.
+      depthFirstDelete(nextNode, charIndex + 1);
