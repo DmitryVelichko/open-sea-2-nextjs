@@ -56,3 +56,55 @@ export default class Trie {
       // - childNode.isCompleteWord === false
       currentNode.removeChild(character);
     };
+
+    // Start depth-first deletion from the head node.
+    depthFirstDelete(this.head);
+
+    return this;
+  }
+
+  /**
+   * @param {string} word
+   * @return {string[]}
+   */
+  suggestNextCharacters(word) {
+    const lastCharacter = this.getLastCharacterNode(word);
+
+    if (!lastCharacter) {
+      return null;
+    }
+
+    return lastCharacter.suggestChildren();
+  }
+
+  /**
+   * Check if complete word exists in Trie.
+   *
+   * @param {string} word
+   * @return {boolean}
+   */
+  doesWordExist(word) {
+    const lastCharacter = this.getLastCharacterNode(word);
+
+    return !!lastCharacter && lastCharacter.isCompleteWord;
+  }
+
+  /**
+   * @param {string} word
+   * @return {TrieNode}
+   */
+  getLastCharacterNode(word) {
+    const characters = Array.from(word);
+    let currentNode = this.head;
+
+    for (let charIndex = 0; charIndex < characters.length; charIndex += 1) {
+      if (!currentNode.hasChild(characters[charIndex])) {
+        return null;
+      }
+
+      currentNode = currentNode.getChild(characters[charIndex]);
+    }
+
+    return currentNode;
+  }
+}
