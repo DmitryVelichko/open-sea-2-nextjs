@@ -50,3 +50,9 @@ export default class Trie {
       if (charIndex === (word.length - 1)) {
         nextNode.isCompleteWord = false;
       }
+
+      // childNode is deleted only if:
+      // - childNode has NO children
+      // - childNode.isCompleteWord === false
+      currentNode.removeChild(character);
+    };
