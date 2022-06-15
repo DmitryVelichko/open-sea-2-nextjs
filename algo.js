@@ -20,3 +20,11 @@ export default class Trie {
       const isComplete = charIndex === characters.length - 1;
       currentNode = currentNode.addChild(characters[charIndex], isComplete);
     }
+
+    return this;
+  }
+
+  /**
+   * @param {string} word
+   * @return {Trie}
+   */
