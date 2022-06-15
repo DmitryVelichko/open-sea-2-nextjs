@@ -34,3 +34,6 @@ export default class Trie {
         // Return if we're trying to delete the character that is out of word's scope.
         return;
       }
+
+      const character = word[charIndex];
+      const nextNode = currentNode.getChild(character);
