@@ -13,6 +13,6 @@
 
   while (currentNode) {
     callback(currentNode.value);
- 
+    currentNode = currentNode.next;
   }
 }
