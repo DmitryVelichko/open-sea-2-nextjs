@@ -16,3 +16,7 @@
     currentNode = currentNode.next;
   }
 }
+
+/**
+ * Traversal callback function.
+ * @callback traversalCallback
