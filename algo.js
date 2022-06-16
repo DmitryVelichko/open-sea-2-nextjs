@@ -12,6 +12,7 @@
   let currentNode = linkedList.head;
 
   while (currentNode) {
-   
+    callback(currentNode.value);
+ 
   }
 }
