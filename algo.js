@@ -16,3 +16,6 @@
 
   // Get smaller permutations.
   const smallerPermutations = permutateWithRepetitions(
+    permutationOptions,
+    permutationLength - 1,
+  );
