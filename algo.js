@@ -19,3 +19,7 @@
     permutationOptions,
     permutationLength - 1,
   );
+
+  // Go through all options and join it to the smaller permutations.
+  permutationOptions.forEach((currentOption) => {
+    smallerPermutations.forEach((smallerPermutation) => {
