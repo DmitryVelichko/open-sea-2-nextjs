@@ -13,3 +13,6 @@
 
   // Init permutations array.
   const permutations = [];
+
+  // Get smaller permutations.
+  const smallerPermutations = permutateWithRepetitions(
