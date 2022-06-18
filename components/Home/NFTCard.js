@@ -29,6 +29,11 @@ const NFTCard = ({ listing }) => {
               {listing.asset.name}
             </div>
           </div>
+
+          <div className={style.priceContainer}>
+            <div className={style.priceTitle}>Buy at</div>
+            
+          </div>
         </div>
       </div>
     </div>
