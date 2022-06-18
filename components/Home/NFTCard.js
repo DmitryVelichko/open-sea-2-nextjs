@@ -8,7 +8,9 @@ const style = {
   nftImage: `rounded-t-lg object-cover`,
   nftLowerContainer: `flex h-1/4 flex-col justify-between p-4`,
   collectionTitle: `text-sm text-gray-500 dark:text-gray-400`,
-  nftTitle: `text-sm font-bold`
+  nftTitle: `text-sm font-bold`,
+  priceContainer: `flex flex-col items-end justify-center space-y-1`,
+  priceTitle: `text-xs font-light`,
 
 };
 
