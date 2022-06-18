@@ -3,7 +3,8 @@ import Main from '../components/Home';
 
 const style = {
   wrapper: `flex h-screen items-center justify-center`,
-  connectWalletButton: `rounded-lg border border-black px-10 py-5 transition-all hover:bg-black hover:text-white`,
+  connectWalletButton: `rounded-lg border border-white text-white px-10 py-5 transition-all hover:bg-black hover:text-white`,
+  //`rounded-lg border border-black px-10 py-5 transition-all hover:bg-black hover:text-white`
 };
 
 export default function Home() {

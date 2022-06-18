@@ -2,7 +2,10 @@ import React from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
 import Image from 'next/image';
 
-const style = {};
+const style = {
+  wrapper: `relative flex h-[450px] w-[340px] cursor-pointer flex-col rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-2xl dark:bg-[#333333]`,
+  
+};
 
 const NFTCard = ({ listing }) => {
   return (
@@ -36,7 +39,7 @@ const NFTCard = ({ listing }) => {
               <Image 
               height={16}
               width={16}
-              src='./weth-logo.svg'
+              src='/weth-logo.svg'
               alt='weth'
               />
               <div className={style.priceValue}>
