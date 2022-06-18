@@ -32,7 +32,12 @@ const NFTCard = ({ listing }) => {
 
           <div className={style.priceContainer}>
             <div className={style.priceTitle}>Buy at</div>
-            
+            <div className={style.wethImageContainer}>
+              <Image 
+              height={16}
+              
+              />
+            </div>
           </div>
         </div>
       </div>
