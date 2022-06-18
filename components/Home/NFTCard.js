@@ -39,6 +39,9 @@ const NFTCard = ({ listing }) => {
               src='./weth-logo.svg'
               alt='weth'
               />
+              <div className={style.priceValue}>
+                {listing.buyoutCurrencyValuePerToken?.displayValue}
+              </div>
             </div>
           </div>
         </div>
