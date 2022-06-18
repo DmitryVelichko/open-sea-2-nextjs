@@ -1,1 +1,1 @@
-### OpenSea 2.0 Web3 dApp clone built with Next.js, Replit, thirdweb, Infura, & Tailwind CSS
+### Starbucks Clone built with HTML, CSS, and JS.
