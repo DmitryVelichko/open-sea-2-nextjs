@@ -35,7 +35,9 @@ const NFTCard = ({ listing }) => {
             <div className={style.wethImageContainer}>
               <Image 
               height={16}
-              
+              width={16}
+              src='./weth-logo.svg'
+              alt='weth'
               />
             </div>
           </div>
