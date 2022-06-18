@@ -45,6 +45,12 @@ const NFTCard = ({ listing }) => {
             </div>
           </div>
         </div>
+        <div className={style.likesContainer}>
+          <AiOutlineHeart className={style.heartIcon}/>
+          <div className={style.likeCounter}>
+          {listing.asset?.stats?.favorites ?? 0}
+          </div>
+        </div>
       </div>
     </div>
   );
