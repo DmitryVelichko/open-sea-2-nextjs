@@ -6,7 +6,10 @@ const style = {
   wrapper: `relative flex h-[450px] w-[340px] cursor-pointer flex-col rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-2xl dark:bg-[#333333]`,
   imageContainer: `h-3/4 overflow-hidden`,
   nftImage: `rounded-t-lg object-cover`,
-  
+  nftLowerContainer: `flex h-1/4 flex-col justify-between p-4`,
+  collectionTitle: `text-sm text-gray-500 dark:text-gray-400`,
+  nftTitle: `text-sm font-bold`
+
 };
 
 const NFTCard = ({ listing }) => {
