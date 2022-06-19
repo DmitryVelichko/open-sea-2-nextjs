@@ -48,3 +48,17 @@ export default class RedBlackTree extends BinarySearchTree {
     if (this.nodeComparator.equal(node, this.root)) {
       return;
     }
+
+    // If the parent is black then done. Nothing to balance here.
+    if (this.isNodeBlack(node.parent)) {
+      return;
+    }
+
+    const grandParent = node.parent.parent;
+
+    if (node.uncle && this.isNodeRed(node.uncle)) {
+      // If node has red uncle then we need to do RECOLORING.
+
+      // Recolor parent and uncle to black.
+      this.makeNodeBlack(node.uncle);
+      this.makeNodeBlack(node.parent);
