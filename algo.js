@@ -154,3 +154,39 @@ export default class RedBlackTree extends BinarySearchTree {
       // Make parent node a root
       parentNode.parent = null;
     }
+
+    // Swap colors of grandParentNode and parentNode.
+    this.swapNodeColors(parentNode, grandParentNode);
+
+    // Return new root node.
+    return parentNode;
+  }
+
+  /**
+   * Left Right Case (p is left child of g and x is right child of p)
+   * @param {BinarySearchTreeNode|BinaryTreeNode} grandParentNode
+   * @return {BinarySearchTreeNode}
+   */
+  leftRightRotation(grandParentNode) {
+    // Memorize left and left-right nodes.
+    const parentNode = grandParentNode.left;
+    const childNode = parentNode.right;
+
+    // We need to memorize child left node to prevent losing
+    // left child subtree. Later it will be re-assigned to
+    // parent's right sub-tree.
+    const childLeftNode = childNode.left;
+
+    // Make parentNode to be a left child of childNode node.
+    childNode.setLeft(parentNode);
+
+    // Move child's left subtree to parent's right subtree.
+    parentNode.setRight(childLeftNode);
+
+    // Put left-right node in place of left node.
+    grandParentNode.setLeft(childNode);
+
+    // Now we're ready to do left-left rotation.
+    return this.leftLeftRotation(grandParentNode);
+  }
+
