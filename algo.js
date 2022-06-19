@@ -114,3 +114,18 @@ export default class RedBlackTree extends BinarySearchTree {
       }
     }
   }
+
+  /**
+   * Left Left Case (p is left child of g and x is left child of p)
+   * @param {BinarySearchTreeNode|BinaryTreeNode} grandParentNode
+   * @return {BinarySearchTreeNode}
+   */
+  leftLeftRotation(grandParentNode) {
+    // Memorize the parent of grand-parent node.
+    const grandGrandParent = grandParentNode.parent;
+
+    // Check what type of sibling is our grandParentNode is (left or right).
+    let grandParentNodeIsLeft;
+    if (grandGrandParent) {
+      grandParentNodeIsLeft = this.nodeComparator.equal(grandGrandParent.left, grandParentNode);
+    }
