@@ -129,3 +129,28 @@ export default class RedBlackTree extends BinarySearchTree {
     if (grandGrandParent) {
       grandParentNodeIsLeft = this.nodeComparator.equal(grandGrandParent.left, grandParentNode);
     }
+
+    // Memorize grandParentNode's left node.
+    const parentNode = grandParentNode.left;
+
+    // Memorize parent's right node since we're going to transfer it to
+    // grand parent's left subtree.
+    const parentRightNode = parentNode.right;
+
+    // Make grandParentNode to be right child of parentNode.
+    parentNode.setRight(grandParentNode);
+
+    // Move child's right subtree to grandParentNode's left subtree.
+    grandParentNode.setLeft(parentRightNode);
+
+    // Put parentNode node in place of grandParentNode.
+    if (grandGrandParent) {
+      if (grandParentNodeIsLeft) {
+        grandGrandParent.setLeft(parentNode);
+      } else {
+        grandGrandParent.setRight(parentNode);
+      }
+    } else {
+      // Make parent node a root
+      parentNode.parent = null;
+    }
