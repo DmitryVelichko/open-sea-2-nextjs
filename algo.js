@@ -31,3 +31,20 @@ export default class RedBlackTree extends BinarySearchTree {
 
     return insertedNode;
   }
+
+  /**
+   * @param {*} value
+   * @return {boolean}
+   */
+  remove(value) {
+    throw new Error(`Can't remove ${value}. Remove method is not implemented yet`);
+  }
+
+  /**
+   * @param {BinarySearchTreeNode} node
+   */
+  balance(node) {
+    // If it is a root node then nothing to balance here.
+    if (this.nodeComparator.equal(node, this.root)) {
+      return;
+    }
