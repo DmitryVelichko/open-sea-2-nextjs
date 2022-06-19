@@ -76,3 +76,17 @@ export default class RedBlackTree extends BinarySearchTree {
       this.balance(grandParent);
     } else if (!node.uncle || this.isNodeBlack(node.uncle)) {
       // If node uncle is black or absent then we need to do ROTATIONS.
+
+      if (grandParent) {
+        // Grand parent that we will receive after rotations.
+        let newGrandParent;
+
+        if (this.nodeComparator.equal(grandParent.left, node.parent)) {
+          // Left case.
+          if (this.nodeComparator.equal(node.parent.left, node)) {
+            // Left-left case.
+            newGrandParent = this.leftLeftRotation(grandParent);
+          } else {
+            // Left-right case.
+            newGrandParent = this.leftRightRotation(grandParent);
+          }
