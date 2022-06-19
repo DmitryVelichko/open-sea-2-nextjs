@@ -190,3 +190,134 @@ export default class RedBlackTree extends BinarySearchTree {
     return this.leftLeftRotation(grandParentNode);
   }
 
+  /**
+   * Right Right Case (p is right child of g and x is right child of p)
+   * @param {BinarySearchTreeNode|BinaryTreeNode} grandParentNode
+   * @return {BinarySearchTreeNode}
+   */
+  rightRightRotation(grandParentNode) {
+    // Memorize the parent of grand-parent node.
+    const grandGrandParent = grandParentNode.parent;
+
+    // Check what type of sibling is our grandParentNode is (left or right).
+    let grandParentNodeIsLeft;
+    if (grandGrandParent) {
+      grandParentNodeIsLeft = this.nodeComparator.equal(grandGrandParent.left, grandParentNode);
+    }
+
+    // Memorize grandParentNode's right node.
+    const parentNode = grandParentNode.right;
+
+    // Memorize parent's left node since we're going to transfer it to
+    // grand parent's right subtree.
+    const parentLeftNode = parentNode.left;
+
+    // Make grandParentNode to be left child of parentNode.
+    parentNode.setLeft(grandParentNode);
+
+    // Transfer all left nodes from parent to right sub-tree of grandparent.
+    grandParentNode.setRight(parentLeftNode);
+
+    // Put parentNode node in place of grandParentNode.
+    if (grandGrandParent) {
+      if (grandParentNodeIsLeft) {
+        grandGrandParent.setLeft(parentNode);
+      } else {
+        grandGrandParent.setRight(parentNode);
+      }
+    } else {
+      // Make parent node a root.
+      parentNode.parent = null;
+    }
+
+    // Swap colors of granParent and parent nodes.
+    this.swapNodeColors(parentNode, grandParentNode);
+
+    // Return new root node.
+    return parentNode;
+  }
+
+  /**
+   * Right Left Case (p is right child of g and x is left child of p)
+   * @param {BinarySearchTreeNode|BinaryTreeNode} grandParentNode
+   * @return {BinarySearchTreeNode}
+   */
+  rightLeftRotation(grandParentNode) {
+    // Memorize right and right-left nodes.
+    const parentNode = grandParentNode.right;
+    const childNode = parentNode.left;
+
+    // We need to memorize child right node to prevent losing
+    // right child subtree. Later it will be re-assigned to
+    // parent's left sub-tree.
+    const childRightNode = childNode.right;
+
+    // Make parentNode to be a right child of childNode.
+    childNode.setRight(parentNode);
+
+    // Move child's right subtree to parent's left subtree.
+    parentNode.setLeft(childRightNode);
+
+    // Put childNode node in place of parentNode.
+    grandParentNode.setRight(childNode);
+
+    // Now we're ready to do right-right rotation.
+    return this.rightRightRotation(grandParentNode);
+  }
+
+  /**
+   * @param {BinarySearchTreeNode|BinaryTreeNode} node
+   * @return {BinarySearchTreeNode}
+   */
+  makeNodeRed(node) {
+    node.meta.set(COLOR_PROP_NAME, RED_BLACK_TREE_COLORS.red);
+
+    return node;
+  }
+
+  /**
+   * @param {BinarySearchTreeNode|BinaryTreeNode} node
+   * @return {BinarySearchTreeNode}
+   */
+  makeNodeBlack(node) {
+    node.meta.set(COLOR_PROP_NAME, RED_BLACK_TREE_COLORS.black);
+
+    return node;
+  }
+
+  /**
+   * @param {BinarySearchTreeNode|BinaryTreeNode} node
+   * @return {boolean}
+   */
+  isNodeRed(node) {
+    return node.meta.get(COLOR_PROP_NAME) === RED_BLACK_TREE_COLORS.red;
+  }
+
+  /**
+   * @param {BinarySearchTreeNode|BinaryTreeNode} node
+   * @return {boolean}
+   */
+  isNodeBlack(node) {
+    return node.meta.get(COLOR_PROP_NAME) === RED_BLACK_TREE_COLORS.black;
+  }
+
+  /**
+   * @param {BinarySearchTreeNode|BinaryTreeNode} node
+   * @return {boolean}
+   */
+  isNodeColored(node) {
+    return this.isNodeRed(node) || this.isNodeBlack(node);
+  }
+
+  /**
+   * @param {BinarySearchTreeNode|BinaryTreeNode} firstNode
+   * @param {BinarySearchTreeNode|BinaryTreeNode} secondNode
+   */
+  swapNodeColors(firstNode, secondNode) {
+    const firstColor = firstNode.meta.get(COLOR_PROP_NAME);
+    const secondColor = secondNode.meta.get(COLOR_PROP_NAME);
+
+    firstNode.meta.set(COLOR_PROP_NAME, secondColor);
+    secondNode.meta.set(COLOR_PROP_NAME, firstColor);
+  }
+}
