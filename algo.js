@@ -90,3 +90,27 @@ export default class RedBlackTree extends BinarySearchTree {
             // Left-right case.
             newGrandParent = this.leftRightRotation(grandParent);
           }
+        } else {
+          // Right case.
+          if (this.nodeComparator.equal(node.parent.right, node)) {
+            // Right-right case.
+            newGrandParent = this.rightRightRotation(grandParent);
+          } else {
+            // Right-left case.
+            newGrandParent = this.rightLeftRotation(grandParent);
+          }
+        }
+
+        // Set newGrandParent as a root if it doesn't have parent.
+        if (newGrandParent && newGrandParent.parent === null) {
+          this.root = newGrandParent;
+
+          // Recolor root into black.
+          this.makeNodeBlack(this.root);
+        }
+
+        // Check if new grand parent don't violate red-black-tree rules.
+        this.balance(newGrandParent);
+      }
+    }
+  }
