@@ -17,3 +17,17 @@ export default class RedBlackTree extends BinarySearchTree {
   insert(value) {
     const insertedNode = super.insert(value);
 
+    // if (!this.root.left && !this.root.right) {
+    if (this.nodeComparator.equal(insertedNode, this.root)) {
+      // Make root to always be black.
+      this.makeNodeBlack(insertedNode);
+    } else {
+      // Make all newly inserted nodes to be red.
+      this.makeNodeRed(insertedNode);
+    }
+
+    // Check all conditions and balance the node.
+    this.balance(insertedNode);
+
+    return insertedNode;
+  }
