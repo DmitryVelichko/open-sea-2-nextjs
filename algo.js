@@ -62,3 +62,17 @@ export default class RedBlackTree extends BinarySearchTree {
       // Recolor parent and uncle to black.
       this.makeNodeBlack(node.uncle);
       this.makeNodeBlack(node.parent);
+
+      if (!this.nodeComparator.equal(grandParent, this.root)) {
+        // Recolor grand-parent to red if it is not root.
+        this.makeNodeRed(grandParent);
+      } else {
+        // If grand-parent is black root don't do anything.
+        // Since root already has two black sibling that we've just recolored.
+        return;
+      }
+
+      // Now do further checking for recolored grand-parent.
+      this.balance(grandParent);
+    } else if (!node.uncle || this.isNodeBlack(node.uncle)) {
+      // If node uncle is black or absent then we need to do ROTATIONS.
