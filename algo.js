@@ -50,3 +50,25 @@ export default class DisjointSet {
    * @param {*} valueB
    * @return {DisjointSet}
    */
+  union(valueA, valueB) {
+    const rootKeyA = this.find(valueA);
+    const rootKeyB = this.find(valueB);
+
+    if (rootKeyA === null || rootKeyB === null) {
+      throw new Error('One or two values are not in sets');
+    }
+
+    if (rootKeyA === rootKeyB) {
+      // In case if both elements are already in the same set then just return its key.
+      return this;
+    }
+
+    const rootA = this.items[rootKeyA];
+    const rootB = this.items[rootKeyB];
+
+    if (rootA.getRank() < rootB.getRank()) {
+      // If rootB's tree is bigger then make rootB to be a new root.
+      rootB.addChild(rootA);
+
+      return this;
+    }
