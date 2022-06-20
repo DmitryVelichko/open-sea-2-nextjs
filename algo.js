@@ -72,3 +72,26 @@ export default class DisjointSet {
 
       return this;
     }
+
+    // If rootA's tree is bigger then make rootA to be a new root.
+    rootA.addChild(rootB);
+
+    return this;
+  }
+
+  /**
+   * @param {*} valueA
+   * @param {*} valueB
+   * @return {boolean}
+   */
+  inSameSet(valueA, valueB) {
+    const rootKeyA = this.find(valueA);
+    const rootKeyB = this.find(valueB);
+
+    if (rootKeyA === null || rootKeyB === null) {
+      throw new Error('One or two values are not in sets');
+    }
+
+    return rootKeyA === rootKeyB;
+  }
+}
