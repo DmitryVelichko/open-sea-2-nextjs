@@ -115,6 +115,11 @@ img {
   color: #000;
 }
 
+.btn-light-outline {
+  border-color: #000;
+  color: #000;
+}
+
 .btn-dark {
   background-color: #000;
   color: #fff;
