@@ -115,9 +115,14 @@ img {
   color: #000;
 }
 
+.btn-dark-outline:hover {
+  background-color: rgba(0,0,0,0.06);
+}
+
+
 .btn-light-outline {
-  border-color: #000;
-  color: #000;
+  border-color: #fff;
+  color: #fff;
 }
 
 .btn-dark {
