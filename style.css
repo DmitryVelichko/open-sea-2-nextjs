@@ -110,7 +110,12 @@ img {
   text-decoration: none;
 }
 
-.bnt-dark-outline {
+.btn-dark-outline {
   border-color: #000;
+  color: #000;
+}
+
+.btn-dark {
+  background-color: #000;
   color: #fff;
 }
