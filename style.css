@@ -109,3 +109,8 @@ img {
   text-align: center;
   text-decoration: none;
 }
+
+.bnt-dark-outline {
+  border-color: #000;
+  color: #fff;
+}
