@@ -137,3 +137,9 @@ img {
 .btn-dark:hover {
   background-color: #333;
 }
+
+/* Backgrounds */
+.bg-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
