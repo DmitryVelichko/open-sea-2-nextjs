@@ -143,3 +143,9 @@ img {
   background-color: var(--color-primary);
   color: #fff;
 }
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
