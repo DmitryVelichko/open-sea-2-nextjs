@@ -149,3 +149,12 @@ img {
   color: #fff;
 }
 
+.bg-extra {
+  background-color: var(--color-extra);
+  color: #000;
+}
+
+.bg-primary {
+  background-color: var(--color-dark);
+  color: #000;
+}
