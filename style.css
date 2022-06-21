@@ -179,3 +179,12 @@ img {
   margin-bottom: 20px;
 }
 
+.text-md {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.text-sm {
+  font-size: 19px;
+  margin-bottom: 20px;
+}
