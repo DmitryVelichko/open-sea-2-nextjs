@@ -154,7 +154,22 @@ img {
   color: #000;
 }
 
-.bg-primary {
+.bg-dark {
   background-color: var(--color-dark);
   color: #000;
 }
+
+/* Text Styling */
+
+.text-center {
+  text-align: center;
+}
+
+.text-xl {
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
