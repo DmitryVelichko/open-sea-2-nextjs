@@ -278,7 +278,38 @@ section a {
   padding: 40px 0;
 }
 
+/* Burger menu icon*/
+.burger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  background: none;
+  border: none;
+  z-index: 10;
+  transition: all 0.25s;
+}
 
+.burger-top,
+.burger-middle,
+.burger-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #000;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.burger-middle {
+  transform: translateY(7px);
+}
+
+.burger-bottom {
+  transform: translateY(14px);
+}
 
 @media (max-width: 960px) {
   .text-xl {
