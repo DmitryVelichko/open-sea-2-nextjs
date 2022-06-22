@@ -117,8 +117,10 @@ section a {
 
 /* Grid Styles */
 
-
-
+.grid-col-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
 /* Buttons */
 
