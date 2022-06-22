@@ -46,9 +46,8 @@ section a {
   height: auto;
   background-color: #fff;
   padding: 20px;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 10%),
-  0 2px 2px rgb(0 0 0 / 6%),
-  0 0 2px rgb(0 0 0 / 7%);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%),
+    0 0 2px rgb(0 0 0 / 7%);
 }
 
 .navbar-container {
@@ -79,8 +78,8 @@ section a {
 }
 
 .navbar-brand img {
- width: 50px;
- height: 50px; 
+  width: 50px;
+  height: 50px;
 }
 
 .navbar-nav-left {
@@ -101,7 +100,38 @@ section a {
 }
 
 .navbar-nav-right li:nth-child(2) {
-  margin: 0 5px
+  margin: 0 5px;
+}
+
+/* Footer and Social */
+.footer-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 30px 30px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.social img {
+  width: 35px;
+  height: 35px;
+}
+
+.social a {
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ccc;
+  width: 95%;
+  margin: 40px auto;
 }
 
 /* Box */
@@ -138,7 +168,7 @@ section a {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .grid-reversed :first-child {
@@ -165,10 +195,9 @@ section a {
 }
 
 .btn-dark-outline:hover,
-.btn-light-outline:hover  {
-  background-color: rgba(0,0,0,0.06);
+.btn-light-outline:hover {
+  background-color: rgba(0, 0, 0, 0.06);
 }
-
 
 .btn-light-outline {
   border-color: #fff;
@@ -249,6 +278,8 @@ section a {
   padding: 40px 0;
 }
 
+
+
 @media (max-width: 960px) {
   .text-xl {
     font-size: 30px;
@@ -263,10 +294,37 @@ section a {
   }
 }
 
-@media(min-width: 1440px) {
+@media(max-width: 768px) {
+  .grid-col-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-reversed :first-child {
+    order: 0;
+  }
+
+  .navbar-brand img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar .navbar-nav-left,
+  .navbar .navbar-nav-right {
+    display: none;
+  }  
+
+  .footer {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1440px) {
   .box {
     max-width: 1440px;
     margin-right: auto;
     margin-left: auto;
   }
-} 
+  .divider {
+    max-width: 90%;
+  }
+}
