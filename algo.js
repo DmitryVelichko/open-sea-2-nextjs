@@ -90,3 +90,14 @@ export default class ComplexNumber {
       im: -1 * complexNumber.im,
     });
   }
+
+  /**
+   * @return {number}
+   */
+  getRadius() {
+    return Math.sqrt((this.re ** 2) + (this.im ** 2));
+  }
+
+  /**
+   * @param {boolean} [inRadians]
+   * @return {number}
