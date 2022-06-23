@@ -8,4 +8,15 @@ export default class ComplexNumber {
    * @param {number} [re]
    * @param {number} [im]
    */
- 
+  constructor({ re = 0, im = 0 } = {}) {
+    this.re = re;
+    this.im = im;
+  }
+
+  /**
+   * @param {ComplexNumber|number} addend
+   * @return {ComplexNumber}
+   */
+  add(addend) {
+    // Make sure we're dealing with complex number.
+    const complexAddend = this.toComplexNumber(addend);
