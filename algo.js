@@ -65,3 +65,9 @@ export default class ComplexNumber {
 
     // Get divider conjugate.
     const dividerConjugate = this.conjugate(complexDivider);
+
+    // Multiply dividend by divider's conjugate.
+    const finalDivident = this.multiply(dividerConjugate);
+
+    // Calculating final divider using formula (a + bi)(a − bi) = a^2 + b^2
+    const finalDivider = (complexDivider.re ** 2) + (complexDivider.im ** 2);
