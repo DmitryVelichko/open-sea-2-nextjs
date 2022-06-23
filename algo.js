@@ -71,3 +71,9 @@ export default class ComplexNumber {
 
     // Calculating final divider using formula (a + bi)(a − bi) = a^2 + b^2
     const finalDivider = (complexDivider.re ** 2) + (complexDivider.im ** 2);
+
+    return new ComplexNumber({
+      re: finalDivident.re / finalDivider,
+      im: finalDivident.im / finalDivider,
+    });
+  }
