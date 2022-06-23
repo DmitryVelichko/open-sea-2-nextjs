@@ -59,3 +59,9 @@ export default class ComplexNumber {
    * @param {ComplexNumber|number} divider
    * @return {ComplexNumber}
    */
+  divide(divider) {
+    // Make sure we're dealing with complex number.
+    const complexDivider = this.toComplexNumber(divider);
+
+    // Get divider conjugate.
+    const dividerConjugate = this.conjugate(complexDivider);
