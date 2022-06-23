@@ -45,3 +45,17 @@ export default class ComplexNumber {
    * @param {ComplexNumber|number} multiplicand
    * @return {ComplexNumber}
    */
+  multiply(multiplicand) {
+    // Make sure we're dealing with complex number.
+    const complexMultiplicand = this.toComplexNumber(multiplicand);
+
+    return new ComplexNumber({
+      re: this.re * complexMultiplicand.re - this.im * complexMultiplicand.im,
+      im: this.re * complexMultiplicand.im + this.im * complexMultiplicand.re,
+    });
+  }
+
+  /**
+   * @param {ComplexNumber|number} divider
+   * @return {ComplexNumber}
+   */
