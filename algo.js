@@ -124,3 +124,37 @@ export default class ComplexNumber {
       // But just for simplicity reasons let's set zero.
       phase = 0;
     }
+
+    if (!inRadians) {
+      phase = radianToDegree(phase);
+    }
+
+    return phase;
+  }
+
+  /**
+   * @param {boolean} [inRadians]
+   * @return {{radius: number, phase: number}}
+   */
+  getPolarForm(inRadians = true) {
+    return {
+      radius: this.getRadius(),
+      phase: this.getPhase(inRadians),
+    };
+  }
+
+  /**
+   * Convert real numbers to complex number.
+   * In case if complex number is provided then lefts it as is.
+   *
+   * @param {ComplexNumber|number} number
+   * @return {ComplexNumber}
+   */
+  toComplexNumber(number) {
+    if (number instanceof ComplexNumber) {
+      return number;
+    }
+
+    return new ComplexNumber({ re: number });
+  }
+}
