@@ -31,3 +31,17 @@ export default class ComplexNumber {
    * @param {ComplexNumber|number} subtrahend
    * @return {ComplexNumber}
    */
+  subtract(subtrahend) {
+    // Make sure we're dealing with complex number.
+    const complexSubtrahend = this.toComplexNumber(subtrahend);
+
+    return new ComplexNumber({
+      re: this.re - complexSubtrahend.re,
+      im: this.im - complexSubtrahend.im,
+    });
+  }
+
+  /**
+   * @param {ComplexNumber|number} multiplicand
+   * @return {ComplexNumber}
+   */
