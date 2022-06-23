@@ -77,3 +77,16 @@ export default class ComplexNumber {
       im: finalDivident.im / finalDivider,
     });
   }
+
+  /**
+   * @param {ComplexNumber|number} number
+   */
+  conjugate(number) {
+    // Make sure we're dealing with complex number.
+    const complexNumber = this.toComplexNumber(number);
+
+    return new ComplexNumber({
+      re: complexNumber.re,
+      im: -1 * complexNumber.im,
+    });
+  }
