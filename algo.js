@@ -82,3 +82,10 @@ export default class BloomFilter {
 
     return hash % this.size;
   }
+
+  /**
+   * @param {string} item
+   * @return {number}
+   */
+  hash2(item) {
+    let hash = 5381;
