@@ -62,3 +62,13 @@ export default class BloomFilter {
         storage[index] = true;
       },
     };
+
+    return storageInterface;
+  }
+
+  /**
+   * @param {string} item
+   * @return {number}
+   */
+  hash1(item) {
+    let hash = 0;
