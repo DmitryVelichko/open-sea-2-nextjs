@@ -18,3 +18,17 @@ export default class BloomFilter {
     // Set each hashValue index to true.
     hashValues.forEach((val) => this.storage.setValue(val));
   }
+
+  /**
+   * @param {string} item
+   * @return {boolean}
+   */
+  mayContain(item) {
+    const hashValues = this.getHashValues(item);
+
+    for (let hashIndex = 0; hashIndex < hashValues.length; hashIndex += 1) {
+      if (!this.storage.getValue(hashValues[hashIndex])) {
+        // We know that the item was definitely not inserted.
+        return false;
+      }
+    }
