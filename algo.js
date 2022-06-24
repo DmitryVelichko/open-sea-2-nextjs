@@ -8,3 +8,13 @@ export default class BloomFilter {
     this.size = size;
     this.storage = this.createStore(size);
   }
+
+  /**
+   * @param {string} item
+   */
+  insert(item) {
+    const hashValues = this.getHashValues(item);
+
+    // Set each hashValue index to true.
+    hashValues.forEach((val) => this.storage.setValue(val));
+  }
