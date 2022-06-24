@@ -53,3 +53,12 @@ export default class BloomFilter {
     for (let storageCellIndex = 0; storageCellIndex < size; storageCellIndex += 1) {
       storage.push(false);
     }
+
+    const storageInterface = {
+      getValue(index) {
+        return storage[index];
+      },
+      setValue(index) {
+        storage[index] = true;
+      },
+    };
