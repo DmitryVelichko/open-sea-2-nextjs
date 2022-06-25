@@ -357,6 +357,21 @@ section a {
   font-size: 20px;
 }
 
+.mobile-menu a:hover {
+  color: var(--color-primary);
+}
+
+.mobile-menu div {
+  margin-top: 20px;
+}
+
+.mobile-menu div a {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  
+}
+
 @media (max-width: 960px) {
   .text-xl {
     font-size: 30px;
