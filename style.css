@@ -288,6 +288,7 @@ section a {
   border: none;
   z-index: 10;
   transition: all 0.25s;
+  display: none;
 }
 
 .burger-top,
@@ -311,6 +312,27 @@ section a {
   transform: translateY(14px);
 }
 
+.open .burger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .burger-middle {
+  display: none;
+}
+
+.open .burger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+/* Mobile Menu */
+
+.mobile-menu {
+  position: fixed;
+  top: 75px;
+  right: 0;
+  background-color: #fff;
+}
+
 @media (max-width: 960px) {
   .text-xl {
     font-size: 30px;
@@ -326,6 +348,10 @@ section a {
 }
 
 @media(max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
   .grid-col-2 {
     grid-template-columns: 1fr;
   }
